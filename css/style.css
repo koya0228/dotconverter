@@ -490,4 +490,7 @@ body {
 		width: 20%;
 		min-width: 150px;
 	}
+	.text-set > .sample input[type="text"] {
+		max-width: 70%;
+	}
 }
