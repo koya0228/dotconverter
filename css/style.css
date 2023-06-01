@@ -299,6 +299,7 @@ body {
 	border-color: var(--colorAccent);
 }
 .text-set > .sample {
+	width: 100%;
 	display: flex;
 	gap: 8px;
 	align-items: center;
@@ -308,6 +309,9 @@ body {
 	border: 2px solid var(--colorMain);
 	border-radius: 4px;
 	padding: 2px 4px;
+}
+.text-set > .sample input[type="text"] {
+	flex-grow: 1;
 }
 .text-set > .sample input[type="text"]:focus {
 	outline: none;
