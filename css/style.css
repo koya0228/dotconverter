@@ -311,6 +311,7 @@ body {
 	padding: 2px 4px;
 }
 .text-set > .sample input[type="text"] {
+	-webkit-appearance: none;
 	flex-grow: 1;
 }
 .text-set > .sample input[type="text"]:focus {
