@@ -223,7 +223,7 @@
 			}
 
 			console.log(dataObject.dotColorArray)
-			$('dotsize').innerText = 'uni２３';
+			$('dotsize').innerText = `${dataObject.imgHeight}`;
 			createDotViewer();
 		}
 	};
