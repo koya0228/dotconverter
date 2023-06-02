@@ -462,7 +462,6 @@ body {
 		font-size: 16px;
 	}
 	#main {
-		margin: 2px 0 0 0;
 		flex-direction: column;
 		overflow-y: scroll;
 	}
@@ -471,8 +470,13 @@ body {
 		height: auto;
 		overflow-y: visible;
 	}
-	.right-container {
+	#main > .right-container {
+		display: none;
+	}
+	.left-container .right-container {
 		width: 100%;
+		box-shadow: none;
+		padding: 0 24px;
 	}
 	.header-title {
 		font-size: 1.2rem;
