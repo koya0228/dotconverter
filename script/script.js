@@ -261,7 +261,7 @@
 		
 		img = null;
 		
-		$('dotsize').innerText = `${img.height}`;
+		// $('dotsize').innerText = `${img.height}`;
 		getImgColors(ctx);
 	};
 
