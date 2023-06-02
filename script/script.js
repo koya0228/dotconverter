@@ -174,7 +174,7 @@
 			
 			console.log(dotHeight, dotWidth);
 			// ドットサイズの表示
-			$('dotsize').innerText = `(${dotWidth}, ${dotHeight})`
+			// $('dotsize').innerText = `(${dotWidth}, ${dotHeight})`
 			
 			let splitHeightArray = [];
 			for(let i=1; i<=dotHeight; i++){
