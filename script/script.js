@@ -201,6 +201,7 @@
 
 	// ドット化した際の各pixelの色を作成
 	const createDotColors = () => {
+		$('img-warn').innerText = '';
 		if(dataObject.dotHeight <= 0 && dataObject.dotHeight > dataObject.imgHeight){
 			console.log('size is over')
 		} else {
