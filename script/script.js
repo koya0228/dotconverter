@@ -251,17 +251,17 @@
 		let img = document.createElement('img');
 		img.src = dataObject.imgObject.src;
 
-		dataObject.imgWidth = img.clientWidth;
-		dataObject.imgHeight = img.clientHeight;
-		canvas.width =img.clientWidth;
-		canvas.height = img.clientHeight;
+		dataObject.imgWidth = img.width;
+		dataObject.imgHeight = img.height;
+		canvas.width =img.width;
+		canvas.height = img.height;
 		
 		let image = dataObject.imgObject;
 		ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 		
 		img = null;
 		
-		$('dotsize').innerText = `${img.clientHeight}`;
+		$('dotsize').innerText = `${img.height}`;
 		getImgColors(ctx);
 	};
 
