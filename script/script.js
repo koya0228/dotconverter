@@ -174,7 +174,7 @@
 			
 			console.log(dotHeight, dotWidth);
 			// ドットサイズの表示
-			// $('dotsize').innerText = `(${dotWidth}, ${dotHeight})`
+			$('dotsize').innerText = `(${dotWidth}, ${dotHeight})`
 			
 			let splitHeightArray = [];
 			for(let i=1; i<=dotHeight; i++){
@@ -185,8 +185,8 @@
 				splitWidthArray[i-1] = Math.round((dataObject.imgWidth / dotWidth)* i);
 			}
 
-			console.log(splitHeightArray)
-			console.log(splitWidthArray)
+			// console.log(splitHeightArray)
+			// console.log(splitWidthArray)
 			
 			for(let h=0; h<dotHeight; h++){
 				dataObject.dotColorArray[h] = [];
@@ -222,7 +222,7 @@
 				}
 			}
 
-			console.log(dataObject.dotColorArray);
+			// console.log(dataObject.dotColorArray);
 			createDotViewer();
 		}
 	};
