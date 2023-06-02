@@ -148,7 +148,7 @@
 			dotPixcelSize = Math.floor(dotViewerOuter.clientWidth / dotWidth);
 		}
 		
-		console.log(dotViewerOuter.clientHeight)
+		// console.log(dotViewerOuter.clientHeight)
 
 		
 		let elemTable = $('dot-viewer');
