@@ -250,6 +250,7 @@
 		
 		let img = document.createElement('img');
 		img.src = dataObject.imgObject.src;
+		body.appendChild(img);
 
 		dataObject.imgWidth = img.width;
 		dataObject.imgHeight = img.height;
