@@ -318,16 +318,20 @@
 		dataObject.imgObject = new Image();
 		let imgFile = e.target.files[0];
 		
-		let fileReader = new FileReader();
-		fileReader.onload = () => {
-			dataObject.imgObject.src = fileReader.result;
-		};
-		fileReader.readAsDataURL(imgFile);
-		fileReader.onloadend = () => {
-			$('img-filename').innerText = imgFile.name;
-			$('img-viewer').src = fileReader.result;
-			setImgCanvas();
-		};
+		if(imgFile){
+			let fileReader = new FileReader();
+			fileReader.readAsDataURL(imgFile);
+			fileReader.onload = () => {
+				dataObject.imgObject.src = fileReader.result;
+			};
+			fileReader.onloadend = () => {
+				$('img-filename').innerText = imgFile.name;
+				$('img-viewer').src = fileReader.result;
+				setImgCanvas();
+			};
+		} else {
+			loadAnimeation('end')
+		}
 	});
 
 	// サイズ変更
