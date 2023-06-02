@@ -240,12 +240,12 @@
 			dataObject.imgColorArray[h] = tmpArray;
 		}
 		
+		$('dotsize').innerText = 'uni2';
 		createDotColors();
 	};
 
 	// 画像をcanvas要素へ変換
 	const setImgCanvas = () => {
-		$('dotsize').innerText = 'uni';
 		let canvas = document.createElement('canvas');
 		let ctx = canvas.getContext('2d');
 		
