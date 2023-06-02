@@ -125,6 +125,12 @@ body {
 	object-fit: contain;
 }
 
+.warning {
+	font-size: 0.9rem;
+	color: #d02727;
+	text-align: center;
+}
+
 .height-setting {
 	display: flex;
 	align-items: center;
