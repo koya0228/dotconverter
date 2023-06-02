@@ -250,22 +250,18 @@
 		
 		let img = document.createElement('img');
 		img.src = dataObject.imgObject.src;
-		img.id = 'img1'
-		document.body.appendChild(img);
-		
-		let imgw = $('img1')
 
-		dataObject.imgWidth = imgw.clientWidth;
-		dataObject.imgHeight = imgw.clientHeight;
-		canvas.width =imgw.clientWidth;
-		canvas.height = imgw.clientHeight;
+		dataObject.imgWidth = img.clientWidth;
+		dataObject.imgHeight = img.clientHeight;
+		canvas.width =img.clientWidth;
+		canvas.height = img.clientHeight;
 		
 		let image = dataObject.imgObject;
 		ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 		
 		img = null;
 		
-		$('dotsize').innerText = `${imgw.clientHeight}`;
+		$('dotsize').innerText = `${img.clientHeight}`;
 		getImgColors(ctx);
 	};
 
