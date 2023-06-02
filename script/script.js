@@ -222,8 +222,7 @@
 				}
 			}
 
-			console.log(dataObject.dotColorArray)
-			$('dotsize').innerText = `${dataObject.imgHeight}`;
+			console.log(dataObject.dotColorArray);
 			createDotViewer();
 		}
 	};
@@ -262,6 +261,7 @@
 		
 		img = null;
 		
+		$('dotsize').innerText = `${img.height}`;
 		getImgColors(ctx);
 	};
 
