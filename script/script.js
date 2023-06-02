@@ -223,6 +223,7 @@
 			}
 
 			console.log(dataObject.dotColorArray)
+			$('dotsize').innerText = 'uni２３';
 			createDotViewer();
 		}
 	};
@@ -240,7 +241,6 @@
 			dataObject.imgColorArray[h] = tmpArray;
 		}
 		
-		$('dotsize').innerText = `${tmpArray}`;
 		createDotColors();
 	};
 
