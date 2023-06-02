@@ -240,7 +240,7 @@
 			dataObject.imgColorArray[h] = tmpArray;
 		}
 		
-		$('dotsize').innerText = 'uni2';
+		$('dotsize').innerText = `${tmpArray}`;
 		createDotColors();
 	};
 
