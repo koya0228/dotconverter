@@ -39,6 +39,7 @@
 		} else {
 			if(document.querySelectorAll('.left-container > #right-container').length > 0){
 				document.querySelectorAll('.left-container > #right-container')[0].remove();
+				createDotViewerFunc()
 			}
 		}
 	})
@@ -179,6 +180,10 @@
 		$('main').style.overflowY = 'scroll';
 		dataObject.flgImgLoading = 0;
 	};
+	
+	function createDotViewerFunc(){
+		createDotViewer();
+	}
 
 	// ドット化した際の各pixelの色を作成
 	const createDotColors = () => {
