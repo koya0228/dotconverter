@@ -138,11 +138,15 @@
 	const loadAnimeation = (key) => {
 		if(key == 'start'){
 			$('loading-display').style.display = 'block';
-			$('main').style.overflowY = 'hidden';
+			if(window.innerWidth <= 990){
+				$('main').style.overflowY = 'hidden';
+			}
 			dataObject.flgImgLoading = 1;
 		} else if(key == 'end'){
 			$('loading-display').style.display = 'none';
-			$('main').style.overflowY = 'scroll';
+			if(window.innerWidth <= 990){
+				$('main').style.overflowY = 'scroll';
+			}
 			dataObject.flgImgLoading = 0;
 		}
 	}
