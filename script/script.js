@@ -15,12 +15,32 @@
 
 	// DOM構成時
 	document.addEventListener('DOMContentLoaded', () => {
-		tableResize()
+		tableResize();
+		
+		if(window.innerWidth <= 990){
+			if(document.querySelectorAll('.left-container > #right-container').length <= 0){
+				$('export-op').insertAdjacentHTML('beforeBegin', $('right-container').outerHTML);
+			}
+		} else {
+			if(document.querySelectorAll('.left-container > #right-container').length > 0){
+				document.querySelectorAll('.left-container > #right-container')[0].remove();
+			}
+		}
 	});
 
 	// リサイズ時
 	window.addEventListener('resize', () => {
 		tableResize();
+		
+		if(window.innerWidth <= 990){
+			if(document.querySelectorAll('.left-container > #right-container').length <= 0){
+				$('export-op').insertAdjacentHTML('beforeBegin', $('right-container').outerHTML);
+			}
+		} else {
+			if(document.querySelectorAll('.left-container > #right-container').length > 0){
+				document.querySelectorAll('.left-container > #right-container')[0].remove();
+			}
+		}
 	})
 
 	// tableエリア リサイズ
@@ -154,9 +174,9 @@
 			}
 			elemTable.appendChild(elemTr);
 		}
-		console.log('end')
+		// console.log('end');
 		$('loading-display').style.display = 'none';
-		$('loading-display').classList.remove('play-now');
+		$('main').style.overflowY = 'scroll';
 		dataObject.flgImgLoading = 0;
 	};
 
@@ -268,7 +288,7 @@
 	// 画像の読み込み
 	$('input-img').addEventListener('change', (e) => {
 		$('loading-display').style.display = 'block';
-		$('loading-display').classList.add('play-now')
+		$('main').style.overflowY = 'hidden';
 		dataObject.flgImgLoading = 1;
 		
 		dataObject.imgObject = new Image();
@@ -291,7 +311,7 @@
 		dataObject.splitDotHeight = $('dot-height-size').value;
 		if(dataObject.dotColorArray.length != 0){
 			$('loading-display').style.display = 'block';
-			$('loading-display').classList.add('play-now')
+			$('main').style.overflowY = 'hidden';
 			dataObject.flgImgLoading = 1;
 
 			console.log('oopo')
