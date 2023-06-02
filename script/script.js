@@ -134,6 +134,18 @@
 		}
 	}
 
+	// ロードアニメーション
+	const loadAnimeation = (key) => {
+		if(key == 'start'){
+			$('loading-display').style.display = 'block';
+			$('main').style.overflowY = 'hidden';
+			dataObject.flgImgLoading = 1;
+		} else if(key == 'end'){
+			$('loading-display').style.display = 'none';
+			$('main').style.overflowY = 'scroll';
+			dataObject.flgImgLoading = 0;
+		}
+	}
 	
 	// ドットのtable要素への描画
 	const createDotViewer = () => {
@@ -176,9 +188,7 @@
 			elemTable.appendChild(elemTr);
 		}
 		// console.log('end');
-		$('loading-display').style.display = 'none';
-		$('main').style.overflowY = 'scroll';
-		dataObject.flgImgLoading = 0;
+		loadAnimeation('end');
 	};
 	
 	function createDotViewerFunc(){
@@ -275,6 +285,12 @@
 		
 		let img = document.createElement('img');
 		img.src = dataObject.imgObject.src;
+		
+		if(img.width > 2000 || img.height > 2000){
+			$('img-warn').innerText = 'This image size is too big.';
+			loadAnimeation('end');
+			return;
+		}
 
 		dataObject.imgWidth = img.width;
 		dataObject.imgHeight = img.height;
@@ -292,9 +308,7 @@
 
 	// 画像の読み込み
 	$('input-img').addEventListener('change', (e) => {
-		$('loading-display').style.display = 'block';
-		$('main').style.overflowY = 'hidden';
-		dataObject.flgImgLoading = 1;
+		loadAnimeation('start');
 		
 		dataObject.imgObject = new Image();
 		let imgFile = e.target.files[0];
@@ -315,9 +329,7 @@
 	$('dot-height-size').addEventListener('change', () => {
 		dataObject.splitDotHeight = $('dot-height-size').value;
 		if(dataObject.dotColorArray.length != 0){
-			$('loading-display').style.display = 'block';
-			$('main').style.overflowY = 'hidden';
-			dataObject.flgImgLoading = 1;
+			loadAnimeation('start');
 
 			console.log('oopo')
 			createDotColors();
